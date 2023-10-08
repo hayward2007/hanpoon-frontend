@@ -10,8 +10,13 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-native": "^0.72.4"
+    "@react-native-community/cli-doctor": "^11.3.8",
+    "babel-plugin-inline-import": "^3.0.0",
+    "react": "^^18.2.0",
+    "react-native": "^^0.72.5",
+    "react-native-svg": "^13.14.0",
+    "react-native-svg-transformer": "^1.1.0",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -27,6 +32,7 @@
     "jest": "^29.2.1",
     "metro-react-native-babel-preset": "0.76.8",
     "prettier": "^2.4.1",
+    "react-native-asset": "^2.1.1",
     "react-test-renderer": "18.2.0",
     "typescript": "4.8.4"
   },

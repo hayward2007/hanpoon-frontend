@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
@@ -116,3 +109,61 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+// import React from 'react';
+// import {Image, View, Text} from 'react-native';
+// import {SvgXml} from 'react-native-svg';
+// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+// import LogoSvg from './assets/images/HanPoon_logo.svg';
+// import alarmSvg from './assets/images/alarm.svg';
+// import profileSvg from './assets/images/profile.svg';
+
+// const tap = createBottomTabNavigator();
+
+// const App = () => {
+//   return (
+//     <View style={{flex: 1, backgroundColor: '#f2f3f5'}}>
+//       <View
+//         style={{
+//           flexDirection: 'row',
+//           marginBottom: 15,
+//           marginTop: 15,
+//           marginLeft: 20,
+//           marginRight: 20,
+//           justifyContent: 'space-between',
+//         }}>
+//         <View style={{flexDirection: 'row', alignContent: 'center'}}>
+//           <View style={{alignSelf: 'center'}}>
+//             <SvgXml width="30" height="30" xml={LogoSvg} />
+//           </View>
+//           <View style={{width: 6}} />
+//           <Text
+//             style={{
+//               alignSelf: 'center',
+//               fontFamily: 'SUIT-Heavy',
+//               fontSize: 18,
+//               color: '#6E98C9',
+//             }}>
+//             한푼
+//           </Text>
+//         </View>
+
+//         <View style={{flexDirection: 'row', alignContent: 'center'}}>
+//           <View style={{alignSelf: 'center'}}>
+//             <SvgXml width="30" height="30" xml={alarmSvg} />
+//           </View>
+//           <View style={{width: 16}} />
+//           <View style={{alignSelf: 'center'}}>
+//             <SvgXml width="30" height="30" xml={profileSvg} />
+//           </View>
+//         </View>
+//       </View>
+
+//       <View style={{flex: 1}} />
+//       <tap.Navigator />
+//     </View>
+//   );
+// };
+
+// export default App;
