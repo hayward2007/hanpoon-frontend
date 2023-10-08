@@ -1,11 +1,17 @@
 import React from 'react';
-import {Text, View,SafeAreaView} from 'react-native';
+import {Text, View,SafeAreaView,ScrollView} from 'react-native';
 import Header from './header';
+import Consume from './consume';
 
 const Home = () => {
   return (
     <SafeAreaView style={{flex:1,backgroundColor:'#f2f3f5'}}>
       <Header></Header>
+
+      <ScrollView style={{flex:1,paddingLeft:16,paddingRight:16,borderRadius:24}}>
+        <Consume></Consume>
+      </ScrollView>
+      
       <Text>Home</Text>
     </SafeAreaView>
   );
