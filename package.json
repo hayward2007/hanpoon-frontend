@@ -12,8 +12,8 @@
   "dependencies": {
     "@react-native-community/cli-doctor": "^11.3.8",
     "babel-plugin-inline-import": "^3.0.0",
-    "react": "^^18.2.0",
-    "react-native": "^^0.72.5",
+    "react": "^18.2.0",
+    "react-native": "^0.72.5",
     "react-native-svg": "^13.14.0",
     "react-native-svg-transformer": "^1.1.0",
     "recoil": "^0.7.7"
