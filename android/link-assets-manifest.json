@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/LICENSE",
+      "sha1": "3a1ef4641a7ccce78927651f585ca47d3a712bde"
+    },
+    {
+      "path": "assets/fonts/MaterialSymbolsRoundedFilled.ttf",
+      "sha1": "3ddd2eae4c5d27b4a29f6c9f36bed3b0e6da077b"
+    },
+    {
+      "path": "assets/fonts/MaterialSymbolsRoundedNormal.ttf",
+      "sha1": "2376b4d3d7f1500ca0dc397ca634051ec783277c"
+    },
+    {
+      "path": "assets/fonts/SUIT-Variable.ttf",
+      "sha1": "ccfe427ecd9996d6711b059202b29288db440f6e"
+    }
+  ]
+}
