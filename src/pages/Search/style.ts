@@ -1,7 +1,16 @@
 import {StyleSheet} from 'react-native';
 import Color from '../../utils/color';
+import {SUITVariable} from '../../utils/text';
 
 const style = StyleSheet.create({
+  Search: {
+    gap: 20,
+  },
+  Title: {
+    fontFamily: SUITVariable.Bold,
+    fontSize: 20,
+    marginLeft: 20,
+  },
   SearchBar: {
     height: 60,
     width: '100%',
@@ -11,6 +20,7 @@ const style = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     gap: 16,
+    backgroundColor: Color.background,
   },
   SearchText: {
     flex: 1,
@@ -20,6 +30,7 @@ const style = StyleSheet.create({
     backgroundColor: Color.white,
     borderStyle: 'solid',
     borderWidth: 2,
+    borderColor: Color.gray[300],
     borderRadius: 12,
     paddingHorizontal: 8,
     paddingVertical: 6,
@@ -27,6 +38,85 @@ const style = StyleSheet.create({
   },
   SearchTextInput: {
     flex: 1,
+    fontFamily: SUITVariable.Medium,
+  },
+  View: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 8,
+  },
+  ViewList: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+    marginHorizontal: 16,
+    gap: 8,
+  },
+  RecentSearchItem: {
+    padding: 12,
+    backgroundColor: Color.white,
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderColor: Color.gray[300],
+    borderRadius: 12,
+    fontFamily: SUITVariable.Medium,
+    fontSize: 16,
+    color: Color.black,
+  },
+  CategoryItem: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    gap: 12,
+    padding: 16,
+    fontSize: 16,
+    fontFamily: SUITVariable.Medium,
+    color: Color.black,
+    backgroundColor: Color.white,
+    borderWidth: 2,
+    borderRadius: 12,
+    borderStyle: 'solid',
+    borderColor: Color.gray[300],
+  },
+  CatogoryIcon: {
+    width: 60,
+    height: 60,
+    borderRadius: 60,
+    backgroundColor: Color.brand,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  PopularViewList: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    marginHorizontal: 16,
+    gap: 6,
+  },
+  PopularSearchItem: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    gap: 8,
+    backgroundColor: Color.white,
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderColor: Color.gray[300],
+    borderRadius: 12,
+    fontFamily: SUITVariable.Medium,
+    fontSize: 16,
+    color: Color.black,
+  },
+  PopularSearchItemIndex: {
+    width: 12,
+    fontFamily: SUITVariable.SemiBold,
+    fontSize: 20,
+    color: Color.gray[600],
   },
 });
 

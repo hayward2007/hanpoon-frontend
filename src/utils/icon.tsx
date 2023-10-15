@@ -37,8 +37,6 @@ export const Icon = ({
           fontWeight: weight,
           color: color,
           lineHeight: size * 1.1,
-          textAlign: 'center',
-          textAlignVertical: 'center',
         }}>
         {icon}
       </Text>

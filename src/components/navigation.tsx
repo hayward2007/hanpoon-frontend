@@ -4,7 +4,7 @@ import {Icon, IconProps} from '../utils/icon';
 import Color from '../utils/color';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useNavigationState} from '@react-navigation/native';
-import SUIT from '../utils/text';
+import SUIT, {SUITVariable} from '../utils/text';
 
 export const NaviagtionButton = ({
   navigation,
@@ -12,7 +12,7 @@ export const NaviagtionButton = ({
   icon,
   name,
   size,
-  color = Color.navigationBarColor.unselected,
+  color = Color.navigationbar.unselected,
 }: {
   navigation: any;
   page: string;
@@ -31,7 +31,6 @@ export const NaviagtionButton = ({
       height: size || 24,
       width: size || 24,
       fontSize: 12,
-      // gap: 4,
     },
   });
   return (
@@ -45,7 +44,9 @@ export const NaviagtionButton = ({
           color={color || icon.color}
         />
         {name && (
-          <SUIT style={{color: color, fontSize: 12}} font="SemiBold">
+          <SUIT
+            style={{color: color, fontSize: 12}}
+            font={SUITVariable.SemiBold}>
             {name}
           </SUIT>
         )}
@@ -88,7 +89,7 @@ const NavigationBar = ({navigation}: {navigation: any}) => {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
-      backgroundColor: Color.navigationBarColor.background,
+      backgroundColor: Color.navigationbar.background,
       height: 60,
       width: '100%',
       paddingLeft: 36,
@@ -98,7 +99,7 @@ const NavigationBar = ({navigation}: {navigation: any}) => {
       borderStyle: 'solid',
       borderWidth: 2,
       borderBottomWidth: 0,
-      borderColor: Color.navigationBarColor.border,
+      borderColor: Color.navigationbar.border,
     },
   });
 
@@ -106,7 +107,7 @@ const NavigationBar = ({navigation}: {navigation: any}) => {
     <SafeAreaView
       edges={['bottom']}
       style={{
-        backgroundColor: Color.navigationBarColor.background,
+        backgroundColor: Color.navigationbar.background,
         borderRadius: 24,
       }}>
       <View style={barStyles.navigationBar}>
@@ -117,9 +118,9 @@ const NavigationBar = ({navigation}: {navigation: any}) => {
             name={page.name}
             page={page.page}
             color={
-              currentPage === page.page
-                ? Color.navigationBarColor.selected
-                : Color.navigationBarColor.unselected
+              currentPage.toLocaleLowerCase() === page.page.toLocaleLowerCase()
+                ? Color.navigationbar.selected
+                : Color.navigationbar.unselected
             }
             icon={{
               icon: page.icon,
