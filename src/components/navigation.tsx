@@ -8,16 +8,18 @@ import SUIT from '../utils/text';
 
 export const NaviagtionButton = ({
   navigation,
-  name,
   page,
-  color,
   icon,
+  name,
+  size,
+  color = Color.navigationBarColor.unselected,
 }: {
   navigation: any;
-  name: string;
   page: string;
-  color: string;
   icon: IconProps;
+  name?: string;
+  size?: number;
+  color?: string;
 }) => {
   const buttonStyles = StyleSheet.create({
     button: {
@@ -26,10 +28,10 @@ export const NaviagtionButton = ({
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: 'transparent',
-      height: 48,
-      width: 48,
+      height: size || 24,
+      width: size || 24,
       fontSize: 12,
-      gap: 4,
+      // gap: 4,
     },
   });
   return (
@@ -42,9 +44,11 @@ export const NaviagtionButton = ({
           weight={icon.weight}
           color={color || icon.color}
         />
-        <SUIT style={{color: color, fontWeight: '700', fontSize: 12}}>
-          {name}
-        </SUIT>
+        {name && (
+          <SUIT style={{color: color, fontSize: 12}} font="SemiBold">
+            {name}
+          </SUIT>
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -121,6 +125,7 @@ const NavigationBar = ({navigation}: {navigation: any}) => {
               icon: page.icon,
               fill: true,
             }}
+            size={48}
           />
         ))}
       </View>

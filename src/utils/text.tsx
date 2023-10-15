@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {StyleProp, StyleSheet, Text, TextStyle} from 'react-native';
 
-const styles = StyleSheet.create({
-  SUIT: {
-    fontFamily: 'SUIT',
-  },
-});
-
-export default class SUIT extends Component<{style?: any; children: string}> {
+export default class SUIT extends Component<{
+  style?: StyleProp<TextStyle>;
+  font?: 'SemiBold' | 'Bold' | 'Regular';
+  children: string;
+}> {
   render() {
+    const style = StyleSheet.create({
+      SUIT: {
+        fontFamily: 'SUITVariable-' + (this.props.font || 'Regular'),
+      },
+    });
     return (
-      <Text style={[styles.SUIT, this.props.style]}>{this.props.children}</Text>
+      <Text style={[style.SUIT, this.props.style]}>{this.props.children}</Text>
     );
   }
 }

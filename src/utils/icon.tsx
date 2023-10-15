@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TextStyle} from 'react-native';
+import {Text, TextStyle, View} from 'react-native';
 import Color from './color';
 
 export interface IconProps {
@@ -18,19 +18,30 @@ export const Icon = ({
   color = Color.black,
 }: IconProps): JSX.Element => {
   return (
-    <Text
+    <View
       style={{
-        // import font as PostScript
-        fontFamily: fill
-          ? 'MaterialSymbolsRounded-Filled'
-          : 'MaterialSymbolsRounded-Normal',
-        fontSize: 24,
-        color: color,
+        flex: 0,
         width: size,
         height: size,
-        fontWeight: weight,
+        overflow: 'hidden',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}>
-      {icon}
-    </Text>
+      <Text
+        style={{
+          // import font as PostScript
+          fontFamily: fill
+            ? 'MaterialSymbolsRounded-Filled'
+            : 'MaterialSymbolsRounded-Normal',
+          fontSize: size,
+          fontWeight: weight,
+          color: color,
+          lineHeight: size * 1.1,
+          textAlign: 'center',
+          textAlignVertical: 'center',
+        }}>
+        {icon}
+      </Text>
+    </View>
   );
 };
