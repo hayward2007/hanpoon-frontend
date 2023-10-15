@@ -23,6 +23,7 @@ const style = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 8,
     paddingVertical: 6,
+    gap: 4,
   },
   SearchTextInput: {
     flex: 1,
