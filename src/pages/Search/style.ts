@@ -114,6 +114,7 @@ const style = StyleSheet.create({
   },
   PopularSearchItemIndex: {
     width: 12,
+    textAlign: 'left',
     fontFamily: SUITVariable.SemiBold,
     fontSize: 20,
     color: Color.gray[600],
