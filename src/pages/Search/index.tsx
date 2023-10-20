@@ -62,6 +62,7 @@ namespace Search {
           <TextInput
             style={style.SearchTextInput}
             placeholder="검색어를 입력하세요"
+            placeholderTextColor={Color.gray[600]}
             onChangeText={text => setSearchText(text)}
             value={SearchText}
           />
@@ -73,7 +74,7 @@ namespace Search {
         </View>
         <NaviagtionButton
           navigation={navigation}
-          icon={{icon: 'shopping_cart'}}
+          icon={{icon: 'shopping_cart', fill: false}}
           page={'cart'}
         />
       </View>
