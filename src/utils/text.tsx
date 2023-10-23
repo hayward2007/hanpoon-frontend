@@ -10,7 +10,7 @@ export class SUITVariable {
   static SemiBold = 'SUITVariable-SemiBold';
   static Bold = 'SUITVariable-Bold';
   static ExtraBold = 'SUITVariable-ExtraBold';
-  static Black = 'SUITVariable-Black';
+  static Heavy = 'SUITVariable-Heavy';
 }
 
 export default class SUIT extends Component<{

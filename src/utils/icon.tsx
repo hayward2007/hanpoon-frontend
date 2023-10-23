@@ -10,13 +10,13 @@ export interface IconProps {
   color?: string;
 }
 
-export const Icon = ({
+export const Icon: React.FC<IconProps> = ({
   icon,
   size = 24,
-  fill = false,
+  fill = true,
   weight = '400',
   color = Color.black,
-}: IconProps): JSX.Element => {
+}) => {
   return (
     <View
       style={{

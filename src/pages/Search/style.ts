@@ -114,9 +114,46 @@ const style = StyleSheet.create({
   },
   PopularSearchItemIndex: {
     width: 12,
+    textAlign: 'left',
     fontFamily: SUITVariable.SemiBold,
     fontSize: 20,
     color: Color.gray[600],
+  },
+  SearchResultView: {
+    flex: 1,
+    paddingHorizontal: 8,
+  },
+  SearchResultItem: {
+    flex: 1,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    backgroundColor: Color.white,
+    gap: 12,
+    padding: 12,
+    borderRadius: 12,
+    margin: 8,
+  },
+  SearchResultTitle: {
+    fontFamily: SUITVariable.Bold,
+    fontSize: 16,
+  },
+  SearchResultValue: {
+    fontFamily: SUITVariable.Medium,
+    fontSize: 14,
+    paddingBottom: 8,
+  },
+  SearchResultImage: {
+    objectFit: 'cover',
+    flex: 1,
+    borderRadius: 6,
+    backgroundColor: Color.gray[600],
+    height: 128,
+    width: '100%',
+  },
+  SearchResultContent: {
+    flex: 1,
   },
 });
 
