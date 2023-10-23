@@ -30,7 +30,7 @@ namespace Home {
         initialRouteName="home"
         screenOptions={{
           headerShown: false,
-          animation: 'fade',
+          animation: 'slide_from_right',
           animationDuration: 200,
         }}>
         <Stack.Screen name="home" component={Index} />
@@ -48,7 +48,7 @@ namespace Home {
           <View style={style.HomeContent}>
             <Summary.SummaryView navigation={navigation} />
             <Card.CardView navigation={navigation} />
-            <News.NewsView />
+            <News.NewsView navigation={navigation} />
             <Space />
           </View>
         </ScrollView>
@@ -116,12 +116,26 @@ namespace Home {
           {SummaryList.map((item, index) => {
             return (
               <View style={style.SummaryViewContent} key={index}>
-                <Text style={style.SummaryViewContentItem}>{item.name}</Text>
-                <View style={style.SummaryViewContentValue}>
+                <Text
+                  key={index + 'title'}
+                  style={style.SummaryViewContentItem}>
+                  {item.name}
+                </Text>
+                <View
+                  key={index + 'content'}
+                  style={style.SummaryViewContentValue}>
                   {item.icon ? (
-                    <Icon icon={item.icon.icon} color={item.icon.color} />
+                    <Icon
+                      key={index + 'icon'}
+                      icon={item.icon.icon}
+                      color={item.icon.color}
+                    />
                   ) : null}
-                  <Text style={style.SummaryViewContentText}>{item.value}</Text>
+                  <Text
+                    key={index + 'value'}
+                    style={style.SummaryViewContentText}>
+                    {item.value}
+                  </Text>
                 </View>
               </View>
             );
@@ -154,7 +168,6 @@ namespace Home {
           style={[style.CardView, border.default]}
           onLayout={event => {
             var {width} = event.nativeEvent.layout;
-            console.log(width);
             SetCardViewWidth(width);
           }}>
           <Text style={style.CardViewTitle}>내 카드</Text>
@@ -180,7 +193,7 @@ namespace Home {
                 style={style.CardViewUsageBarBackground}
                 onLayout={event => {
                   var {width} = event.nativeEvent.layout;
-                  console.log(width);
+                  // console.log(width);
                   SetCardUsageBarPercentWidth(
                     width * (CardUsage.percent / 100),
                   );
@@ -234,16 +247,20 @@ namespace Home {
 
     const NewsItem = ({title, date, url}: NewsData) => {
       return (
-        <TouchableOpacity onPress={() => NewsLink(url)}>
-          <View>
-            <Text style={style.NewsItemTitle}>{title}</Text>
-            <Text style={style.NewsItemDate}>{date}</Text>
+        <TouchableOpacity key={url} onPress={() => NewsLink(url)}>
+          <View key={title}>
+            <Text key={title + 'title'} style={style.NewsItemTitle}>
+              {title}
+            </Text>
+            <Text key={date} style={style.NewsItemDate}>
+              {date}
+            </Text>
           </View>
         </TouchableOpacity>
       );
     };
 
-    export const NewsView = () => {
+    export const NewsView = ({navigation}: {navigation: any}) => {
       return (
         <View style={[style.NewsView, border.default]}>
           <View>
@@ -252,17 +269,17 @@ namespace Home {
           </View>
           <View style={style.NewsViewList}>
             {NewsList.map((news, index) => (
-              <>
+              <React.Fragment key={index}>
                 <NewsItem
+                  key={index.toString() + 'news'}
                   title={news.title}
                   date={news.date}
                   url={news.url}
-                  key={index + 'news'}
                 />
                 {index < NewsList.length - 1 && (
-                  <View key={index} style={style.NewsItemBreakLine} />
+                  <View key={index + 'line'} style={style.NewsItemBreakLine} />
                 )}
-              </>
+              </React.Fragment>
             ))}
           </View>
         </View>
