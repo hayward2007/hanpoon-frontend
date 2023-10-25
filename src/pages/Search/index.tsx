@@ -14,6 +14,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Cart from './Cart';
+import Detail from './Detail';
 
 import style from './style';
 import Color from '../../utils/color';
@@ -48,6 +49,7 @@ namespace Search {
         }}>
         <Stack.Screen name="search" component={Index} />
         <Stack.Screen name="cart" component={Cart} />
+        <Stack.Screen name="detail" component={Detail} />
       </Stack.Navigator>
     );
   };
@@ -76,7 +78,9 @@ namespace Search {
             showsVerticalScrollIndicator={false}>
             <View style={style.Search}>
               <RecentSearch.RecentSearchView setSearchText={setSearchText} />
-              <CategorySearch.CategorySearchView />
+              <CategorySearch.CategorySearchView
+                setSearchText={setSearchText}
+              />
               <PopularSearch.PopularSearchView setSearchText={setSearchText} />
             </View>
             <Space />
@@ -160,7 +164,7 @@ namespace Search {
             return (
               <TouchableOpacity
                 style={style.SearchResultContent}
-                onPress={() => Linking.openURL(item.item.link)}>
+                onPress={() => navigation.push('detail', item.item)}>
                 <View style={[style.SearchResultItem, border.default]}>
                   <Image
                     style={style.SearchResultImage}
@@ -268,18 +272,32 @@ namespace Search {
       },
     ];
 
-    const CategorySearchItem = ({text, icon}: {text: string; icon: string}) => {
+    const CategorySearchItem = ({
+      text,
+      icon,
+      setSearchText,
+    }: {
+      text: string;
+      icon: string;
+      setSearchText: any;
+    }) => {
       return (
-        <View style={style.CategoryItem}>
-          <View style={style.CatogoryIcon}>
-            <Icon icon={icon} color={Color.white} size={31} />
+        <TouchableOpacity
+          onPress={() => {
+            setSearchText(text);
+            api.search(text);
+          }}>
+          <View style={style.CategoryItem}>
+            <View style={style.CatogoryIcon}>
+              <Icon icon={icon} color={Color.white} size={31} />
+            </View>
+            <Text>{text}</Text>
           </View>
-          <Text>{text}</Text>
-        </View>
+        </TouchableOpacity>
       );
     };
 
-    export const CategorySearchView = () => {
+    export const CategorySearchView = ({setSearchText}: SearchProps) => {
       return (
         <View style={style.View}>
           <Text style={style.Title}>카테고리</Text>
@@ -290,6 +308,7 @@ namespace Search {
                   text={category.name}
                   key={index}
                   icon={category.icon}
+                  setSearchText={setSearchText}
                 />
               ))}
             </View>
