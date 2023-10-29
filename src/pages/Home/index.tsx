@@ -17,7 +17,6 @@ import style from './style';
 import Logo from '../../../assets/images/logo.svg';
 
 import Notify from './Notify';
-import Profile from './Profile';
 import {Icon} from '../../utils/icon';
 import border from '../../utils/border';
 import Space from '../../utils/space';
@@ -35,7 +34,6 @@ namespace Home {
         }}>
         <Stack.Screen name="home" component={Index} />
         <Stack.Screen name="notify" component={Notify} />
-        <Stack.Screen name="profile" component={Profile} />
       </Stack.Navigator>
     );
   };
@@ -69,12 +67,6 @@ namespace Home {
             navigation={navigation}
             icon={{icon: 'notifications'}}
             page={'notify'}
-            color="#5D7999"
-          />
-          <NaviagtionButton
-            navigation={navigation}
-            icon={{icon: 'account_circle'}}
-            page={'profile'}
             color="#5D7999"
           />
         </View>
@@ -167,7 +159,7 @@ namespace Home {
         <View
           style={[style.CardView, border.default]}
           onLayout={event => {
-            var {width} = event.nativeEvent.layout;
+            const {width} = event.nativeEvent.layout;
             SetCardViewWidth(width);
           }}>
           <Text style={style.CardViewTitle}>내 카드</Text>
@@ -192,7 +184,7 @@ namespace Home {
               <View
                 style={style.CardViewUsageBarBackground}
                 onLayout={event => {
-                  var {width} = event.nativeEvent.layout;
+                  const {width} = event.nativeEvent.layout;
                   // console.log(width);
                   SetCardUsageBarPercentWidth(
                     width * (CardUsage.percent / 100),

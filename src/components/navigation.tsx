@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, View, TouchableOpacity} from 'react-native';
-import {Icon, IconProps} from '../utils/icon';
-import Color from '../utils/color';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useNavigationState} from '@react-navigation/native';
-import SUIT, {SUITVariable} from '../utils/text';
+import Color from '@utils/color';
+import {Icon, IconProps} from '@utils/icon';
+import SUIT, {SUITVariable} from '@utils/text';
 
 export const NaviagtionButton = ({
   navigation,

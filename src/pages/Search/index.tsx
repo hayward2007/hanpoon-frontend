@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {
   Text,
   View,
-  Linking,
   Keyboard,
   TextInput,
   ScrollView,
@@ -17,14 +16,15 @@ import Cart from './Cart';
 import Detail from './Detail';
 
 import style from './style';
-import Color from '../../utils/color';
-import Space from '../../utils/space';
-import {Icon} from '../../utils/icon';
-import SearchAPI from '../../apis/search';
-import NavigationBar, {NaviagtionButton} from '../../components/navigation';
 import SearchStackParamList from './type';
-import border from '../../utils/border';
-import Indicator from '../../utils/indicator';
+import SearchAPI from '@apis/search';
+import Color from '@utils/color';
+import Space from '@utils/space';
+import {Icon} from '@utils/icon';
+import border from '@utils/border';
+import Indicator from '@utils/indicator';
+import Goods from '@pages/Search/Goods';
+import NavigationBar, {NaviagtionButton} from '@components/navigation';
 
 namespace Search {
   const Stack = createNativeStackNavigator<SearchStackParamList>();
@@ -50,6 +50,7 @@ namespace Search {
         <Stack.Screen name="search" component={Index} />
         <Stack.Screen name="cart" component={Cart} />
         <Stack.Screen name="detail" component={Detail} />
+        <Stack.Screen name="goods" component={Goods} />
       </Stack.Navigator>
     );
   };

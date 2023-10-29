@@ -16,8 +16,10 @@ class SearchAPI {
   protected index = 1;
   protected current = '';
   public data: SearchResultType[] = [];
+  public complementary: SearchResultType[] = [];
+  public substitute: SearchResultType[] = [];
 
-  public async search(request: string) {
+  public async search(request: string, display: number = 100) {
     try {
       if (this.current !== request) {
         this.count = 0;
@@ -29,7 +31,7 @@ class SearchAPI {
       const response = await axios.get(this.PATH, {
         params: {
           query: request,
-          display: 100,
+          display: display,
           sort: 'sim',
           start: this.index,
           exclude: 'used:rental',
@@ -40,7 +42,12 @@ class SearchAPI {
         },
       });
 
-      response.data.items
+      if (response.data.items.length < 10) {
+        if (response.data.items.length === 0) return this.data;
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+
+      await response.data.items
         .sort((a: any, b: any) => (a.lprice < b.lprice ? -1 : 1))
         .map((item: any) => {
           this.index++;
@@ -59,10 +66,13 @@ class SearchAPI {
       if (this.count >= 10) {
         return this.data;
       }
+
+      // console.log(this.data);
+
       await this.search(request);
     } catch (error) {
       console.log(error);
-      return error;
+      return this.data;
     }
   }
 }
