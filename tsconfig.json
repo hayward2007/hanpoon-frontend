@@ -8,8 +8,8 @@
       "@pages/*": ["pages/*"],
       "@utils/*": ["utils/*"],
       "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
-    },
+      "@components/*": ["components/*"]
+    }
   },
   "include": ["./src", "./svg.d.ts"]
 }

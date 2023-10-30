@@ -3,9 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
+<<<<<<< HEAD
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>hanpoon</string>
+=======
 	<string>kr</string>
 	<key>CFBundleDisplayName</key>
 	<string>한푼</string>
+>>>>>>> dd58ce7f6e6b92fad3565b9046fac2bb1f41ac3e
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -36,7 +42,11 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
+<<<<<<< HEAD
+	<string/>
+=======
 	<string></string>
+>>>>>>> dd58ce7f6e6b92fad3565b9046fac2bb1f41ac3e
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

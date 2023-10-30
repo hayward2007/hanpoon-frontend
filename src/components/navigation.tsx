@@ -23,14 +23,14 @@ export const NaviagtionButton = ({
 }) => {
   const buttonStyles = StyleSheet.create({
     button: {
+      alignItems: 'center',
+      backgroundColor: 'transparent',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: 'transparent',
-      height: size || 24,
-      width: size || 24,
       fontSize: 12,
+      height: size || 24,
+      justifyContent: 'center',
+      width: size || 24,
     },
   });
   return (
@@ -85,21 +85,21 @@ const NavigationBar = ({navigation}: {navigation: any}) => {
 
   const barStyles = StyleSheet.create({
     navigationBar: {
-      display: 'flex',
-      flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'space-between',
       backgroundColor: Color.navigationbar.background,
-      height: 60,
-      width: '100%',
-      paddingLeft: 36,
-      paddingRight: 36,
-      borderStartStartRadius: 24,
-      borderStartEndRadius: 24,
-      borderStyle: 'solid',
-      borderWidth: 2,
       borderBottomWidth: 0,
       borderColor: Color.navigationbar.border,
+      borderStartEndRadius: 24,
+      borderStartStartRadius: 24,
+      borderStyle: 'solid',
+      borderWidth: 2,
+      display: 'flex',
+      flexDirection: 'row',
+      height: 60,
+      justifyContent: 'space-between',
+      paddingLeft: 36,
+      paddingRight: 36,
+      width: '100%',
     },
   });
 

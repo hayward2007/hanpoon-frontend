@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
-    "react-native/react-native": true
+    'react-native/react-native': true,
   },
   extends: [
     '@react-native',
@@ -22,7 +22,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
-      tsx: true
+      tsx: true,
     },
     project: './tsconfig.json',
   },
